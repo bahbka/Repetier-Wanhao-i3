@@ -222,14 +222,14 @@ void GCode::checkAndPushCommand()
             return;
         }
         lastLineNumber = actLineNumber;
-    } else if(lastLineNumber && !(hasM() && M == 117)) { // once line number always line number!
+    } /*else if(lastLineNumber && !(hasM() && M == 117)) { // once line number always line number!
 		if(Printer::debugErrors())
         {
 			Com::printErrorFLN(PSTR("Missing linenumber"));
 		}
 		requestResend();
 		return;
-	}
+	}*/
 	if(GCode::hasFatalError() && !(hasM() && M==999)) {
 		GCode::reportFatalError();
 	} else {
